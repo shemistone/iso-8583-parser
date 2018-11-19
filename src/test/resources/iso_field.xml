@@ -1,0 +1,1303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<isoField>
+   <id>0</id>
+   <length>0</length>
+   <maxLength>999</maxLength>
+   <cls>ke.co.shemistone.parser.field.FixedCompoundField</cls>
+   <padder>SPACE_APPENDER</padder>
+   <description />
+   <valueEncoding>ASC</valueEncoding>
+   <lengthEncoding>ASC</lengthEncoding>
+   <isoField>
+      <id>0</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description>Message Type Identifier (MTI)</description>
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>1</id>
+      <length>64</length>
+      <maxLength>64</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedBinField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description>Bitmap</description>
+      <valueEncoding>BCD</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>2</id>
+      <length>0</length>
+      <maxLength>19</maxLength>
+      <cls>ke.co.shemistone.parser.field.VariableNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description>Primary Account Number (PAN)</description>
+      <valueEncoding>BCD</valueEncoding>
+      <lengthEncoding>ASC</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>3</id>
+      <length>6</length>
+      <maxLength>6</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description>Processing Code</description>
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>4</id>
+      <length>12</length>
+      <maxLength>12</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description>Amount, Transaction</description>
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>5</id>
+      <length>12</length>
+      <maxLength>12</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description>Amount, Settlement</description>
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>6</id>
+      <length>12</length>
+      <maxLength>12</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description>Amount, Cardholder Billing</description>
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>7</id>
+      <length>10</length>
+      <maxLength>10</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description>Transmission Date and Time</description>
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>8</id>
+      <length>12</length>
+      <maxLength>12</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description>Amount, Cardholder Billing Fee</description>
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>9</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>10</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>11</id>
+      <length>6</length>
+      <maxLength>6</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description>System Trace Audit Number (STAN)</description>
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>12</id>
+      <length>6</length>
+      <maxLength>6</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description>Time, Local Transaction</description>
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>13</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description>Date, Local Transaction</description>
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>14</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description>Date, Expiration</description>
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>15</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description>Date, Settlement</description>
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>16</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>17</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>18</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description>Merchant Type</description>
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>19</id>
+      <length>3</length>
+      <maxLength>3</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description>Acquiring Institution Counrty Code</description>
+      <valueEncoding>BCD</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>20</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>21</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>22</id>
+      <length>3</length>
+      <maxLength>3</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description>Card Sequence Number</description>
+      <valueEncoding>BCD</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>23</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>24</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>25</id>
+      <length>2</length>
+      <maxLength>2</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description>POS Condition Code</description>
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>26</id>
+      <length>2</length>
+      <maxLength>2</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description>POS PIN Capture Code</description>
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>27</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>28</id>
+      <length>9</length>
+      <maxLength>9</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description>Amount, Transaction Fee</description>
+      <valueEncoding>BCD</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>29</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>30</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>31</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>32</id>
+      <length>0</length>
+      <maxLength>11</maxLength>
+      <cls>ke.co.shemistone.parser.field.VariableNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description>Acquiring Institution ID Code</description>
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>33</id>
+      <length>0</length>
+      <maxLength>11</maxLength>
+      <cls>ke.co.shemistone.parser.field.VariableNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description>Forwarding Institution ID Code</description>
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>34</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>35</id>
+      <length>0</length>
+      <maxLength>37</maxLength>
+      <cls>ke.co.shemistone.parser.field.VariableAnsField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description>Track 2 Data</description>
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>36</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>37</id>
+      <length>12</length>
+      <maxLength>12</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedAnsField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description>Retrieval Reference Number</description>
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>38</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>39</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>40</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>41</id>
+      <length>8</length>
+      <maxLength>8</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedAnsField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description>Card Acceptor Terminal ID</description>
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>42</id>
+      <length>15</length>
+      <maxLength>15</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedAnsField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description>Card Acceptor ID Code</description>
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>43</id>
+      <length>40</length>
+      <maxLength>40</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedAnsField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description>Card Acceptor Name and Location</description>
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>44</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>45</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>46</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>47</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>48</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>49</id>
+      <length>3</length>
+      <maxLength>3</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description>Curreny Code, Transaction</description>
+      <valueEncoding>BCD</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>50</id>
+      <length>3</length>
+      <maxLength>3</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description>Currency Code, Settlement</description>
+      <valueEncoding>BCD</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>51</id>
+      <length>3</length>
+      <maxLength>3</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description>Currency Code, Cardholder Billing</description>
+      <valueEncoding>BCD</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>52</id>
+      <length>64</length>
+      <maxLength>64</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedBinField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description>Personal Identification Number (PIN) Data</description>
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>53</id>
+      <length>16</length>
+      <maxLength>16</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description>Security Related Information</description>
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>54</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>55</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>56</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>57</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>58</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>59</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>60</id>
+      <length>0</length>
+      <maxLength>999</maxLength>
+      <cls>ke.co.shemistone.parser.field.VariableAnsField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description>Additional POS Data</description>
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>61</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>62</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>63</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>64</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>65</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>66</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>67</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>68</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>69</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>70</id>
+      <length>3</length>
+      <maxLength>3</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>71</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>72</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>73</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>74</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>75</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>76</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>77</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>78</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>79</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>80</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>81</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>82</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>83</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>84</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>85</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>86</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>87</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>88</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>89</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>90</id>
+      <length>42</length>
+      <maxLength>42</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description>Original Data Elements</description>
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>91</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>92</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>93</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>94</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>95</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>96</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>97</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>98</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>99</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>100</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>101</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>102</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>103</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>104</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>105</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>106</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>107</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>108</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>109</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>110</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>111</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>112</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>113</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>114</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>115</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>116</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>117</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>118</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>119</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>120</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>121</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>122</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>123</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>124</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>125</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>126</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>127</id>
+      <length>0</length>
+      <maxLength>999</maxLength>
+      <cls>ke.co.shemistone.parser.field.VariableAnsField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+   <isoField>
+      <id>128</id>
+      <length>4</length>
+      <maxLength>4</maxLength>
+      <cls>ke.co.shemistone.parser.field.FixedNumField</cls>
+      <padder>ZERO_PREPENDER</padder>
+      <description />
+      <valueEncoding>ASC</valueEncoding>
+      <lengthEncoding>BCD</lengthEncoding>
+   </isoField>
+</isoField>
+
+
