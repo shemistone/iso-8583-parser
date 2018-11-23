@@ -145,7 +145,7 @@ public class VariableCompoundField implements CompoundField {
                 throw new PackException(String.format("Length of field %d (%d) is more than %d", this.id, this.value.length(), this.maxLength));
             }
             String encodedLength;
-            this.length = this.encodedValue.length();
+            this.length = this.value.length();
             encodedLength = String.valueOf(this.length);
             encodedLength = Strings.prepend(encodedLength, "0", this.lengthOfLength);
             switch (this.lengthEncoding) {
@@ -165,18 +165,21 @@ public class VariableCompoundField implements CompoundField {
 
     @Override
     public int decode(String head) {
+        int valueIndex;
         try {
             switch (this.lengthEncoding) {
                 case BCD:
                     if (this.lengthOfLength % 2 != 0) {
-                        this.lengthOfLength = this.lengthOfLength + 1;
+                        valueIndex = (this.lengthOfLength + 1) / 2;
+                    } else {
+                        valueIndex = this.lengthOfLength / 2;
                     }
-                    this.lengthOfLength = this.lengthOfLength / 2;
-                    this.length = Integer.parseInt(Converters.asciiToHex(head.substring(0, this.lengthOfLength)));
+                    this.length = Integer.parseInt(Converters.asciiToHex(head.substring(0, valueIndex)));
                     break;
                 case ASC:
                 default:
-                    this.length = Integer.parseInt(head.substring(0, this.lengthOfLength));
+                    valueIndex = this.lengthOfLength;
+                    this.length = Integer.parseInt(head.substring(0, valueIndex));
                     break;
             }
             if (this.length > this.maxLength) {
@@ -185,7 +188,7 @@ public class VariableCompoundField implements CompoundField {
         } catch (RuntimeException ex) {
             throw new UnpackException(String.format("Error unpacking field %d", this.id), ex);
         }
-        int headIndex = this.lengthOfLength;
+        int headIndex = valueIndex;
         for (int fieldId = 0; fieldId < this.fields.size(); fieldId++) {
             try {
                 Field field = this.fields.get(fieldId);

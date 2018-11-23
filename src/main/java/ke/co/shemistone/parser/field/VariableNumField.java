@@ -17,7 +17,7 @@ public class VariableNumField implements Field {
     private int id;
     private int length;
     private int maxLength;
-    private int lengthOfLength;//lvar,llvar,lllvar
+    private int lengthOfLength;
     private Encoding lengthEncoding;
     private Encoding valueEncoding;
     private String value = "";
@@ -40,7 +40,7 @@ public class VariableNumField implements Field {
             throw new PackException(String.format("Length of field %d (%s) is more than %d", this.id, this.value.length(), this.maxLength));
         }
         this.length = this.value.length();
-        String encodedLength;//n..19
+        String encodedLength;
         encodedLength = String.valueOf(this.length);
         encodedLength = Strings.prepend(encodedLength, "0", this.lengthOfLength);
         switch (this.lengthEncoding) {
@@ -66,17 +66,20 @@ public class VariableNumField implements Field {
 
     @Override
     public int decode(String head) {
+        int nextValueIndex;
         switch (this.lengthEncoding) {
             case BCD:
                 if (this.lengthOfLength % 2 != 0) {
-                    this.lengthOfLength = this.lengthOfLength + 1;
+                    nextValueIndex = (this.lengthOfLength + 1) / 2;
+                } else {
+                    nextValueIndex = this.lengthOfLength / 2;
                 }
-                this.lengthOfLength = this.lengthOfLength / 2;
-                this.length = Integer.parseInt(Converters.asciiToHex(head.substring(0, this.lengthOfLength)));
+                this.length = Integer.parseInt(Converters.asciiToHex(head.substring(0, nextValueIndex)));
                 break;
             case ASC:
             default:
-                this.length = Integer.parseInt(head.substring(0, this.lengthOfLength));
+                nextValueIndex = this.lengthOfLength;
+                this.length = Integer.parseInt(head.substring(0, nextValueIndex));
                 break;
         }
         if (this.length > this.maxLength) {
@@ -86,19 +89,20 @@ public class VariableNumField implements Field {
         switch (this.valueEncoding) {
             case BCD:
                 if (this.length % 2 != 0) {
-                    this.length = this.length + 1;
+                    nextHeadIndex = nextValueIndex + (this.length + 1) / 2;
+                } else {
+                    nextHeadIndex = nextValueIndex + this.length / 2;
                 }
-                nextHeadIndex = this.lengthOfLength + this.length / 2;
-                this.encodedValue = head.substring(this.lengthOfLength, nextHeadIndex);
-                head = head.substring(0, this.lengthOfLength) + Converters.asciiToHex(head.substring(this.lengthOfLength));
+                this.encodedValue = head.substring(nextValueIndex, nextHeadIndex);
+                this.value = Converters.asciiToHex(this.encodedValue);
                 break;
             case ASC:
             default:
-                nextHeadIndex = this.lengthOfLength + this.length;
-                this.encodedValue = head.substring(this.lengthOfLength, nextHeadIndex);
+                nextHeadIndex = nextValueIndex + this.length;
+                this.encodedValue = head.substring(nextValueIndex, nextHeadIndex);
+                this.value = this.encodedValue;
                 break;
         }
-        this.value = head.substring(this.lengthOfLength, this.lengthOfLength + this.length);
         return nextHeadIndex;
     }
 

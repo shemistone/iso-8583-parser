@@ -6,6 +6,7 @@
 package ke.co.shemistone.parser.field;
 
 import ke.co.shemistone.parser.Converters;
+import ke.co.shemistone.parser.Strings;
 
 /**
  *
@@ -35,11 +36,12 @@ public class FixedBinField implements Field {
         if (this.value.length() > this.length) {
             throw new PackException(String.format("Length of field %d (%d) is more than %d", this.id, this.value.length(), this.length));
         }
-//        switch (this.padder) {
-//            default:
-//                this.value = Strings.prepend(this.value, "0", this.length);
-//                break;
-//        }
+        switch (this.padder) {
+            case ZERO_PREPENDER:
+            default:
+                this.value = Strings.prepend(this.value, "0", this.length);
+                break;
+        }
         switch (this.valueEncoding) {
             case BCD:
                 this.encodedValue = Converters.binToAscii(this.value);
@@ -59,16 +61,15 @@ public class FixedBinField implements Field {
             case BCD:
                 nextHeadIndex = this.length / 8;
                 this.encodedValue = head.substring(0, nextHeadIndex);
-                head = Converters.asciiToBin(head);
+                this.value = Converters.asciiToBin(this.encodedValue);
                 break;
             case ASC:
             default:
                 nextHeadIndex = this.length / 4;
                 this.encodedValue = head.substring(0, nextHeadIndex);
-                head = Converters.hexToBin(head.substring(0, nextHeadIndex));
+                this.value = Converters.hexToBin(this.encodedValue);
                 break;
         }
-        this.value = head.substring(0, this.length);
         return nextHeadIndex;
     }
 

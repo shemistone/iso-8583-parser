@@ -43,7 +43,7 @@ public class FixedNumField implements Field {
                 break;
         }
         switch (this.valueEncoding) {
-            case BCD://0800
+            case BCD:
                 this.encodedValue = Converters.hexToAscii(this.value);
                 break;
             case ASC:
@@ -60,19 +60,20 @@ public class FixedNumField implements Field {
         switch (this.valueEncoding) {
             case BCD:
                 if (this.length % 2 != 0) {
-                    this.length = this.length + 1;
+                    nextHeadIndex = (this.length + 1) / 2;
+                } else {
+                    nextHeadIndex = this.length / 2;
                 }
-                nextHeadIndex = this.length / 2;
                 this.encodedValue = head.substring(0, nextHeadIndex);
-                head = Converters.asciiToHex(head);
+                this.value = Converters.asciiToHex(this.encodedValue);
                 break;
             case ASC:
             default:
                 nextHeadIndex = this.length;
                 this.encodedValue = head.substring(0, nextHeadIndex);
+                this.value = this.encodedValue;
                 break;
         }
-        this.value = head.substring(0, this.length);
         return nextHeadIndex;
     }
 

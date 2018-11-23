@@ -64,17 +64,20 @@ public class VariableAnsField implements Field {
 
     @Override
     public int decode(String head) {
+        int nextValueIndex;
         switch (this.lengthEncoding) {
             case BCD:
                 if (this.lengthOfLength % 2 != 0) {
-                    this.lengthOfLength = this.lengthOfLength + 1;
+                    nextValueIndex = (this.lengthOfLength + 1) / 2;
+                } else {
+                    nextValueIndex = this.lengthOfLength / 2;
                 }
-                this.lengthOfLength = this.lengthOfLength / 2;
-                this.length = Integer.parseInt(Converters.asciiToHex(head.substring(0, this.lengthOfLength)));
+                this.length = Integer.parseInt(Converters.asciiToHex(head.substring(0, nextValueIndex)));
                 break;
             case ASC:
             default:
-                this.length = Integer.parseInt(head.substring(0, this.lengthOfLength));
+                nextValueIndex = this.lengthOfLength;
+                this.length = Integer.parseInt(head.substring(0, nextValueIndex));
                 break;
         }
         if (this.length > this.maxLength) {
@@ -84,11 +87,11 @@ public class VariableAnsField implements Field {
         switch (this.valueEncoding) {
             case ASC:
             default:
-                nextHeadIndex = this.lengthOfLength + this.length;
-                this.encodedValue = head.substring(this.lengthOfLength, nextHeadIndex);
+                nextHeadIndex = nextValueIndex + this.length;
+                this.encodedValue = head.substring(nextValueIndex, nextHeadIndex);
+                this.value = this.encodedValue;
                 break;
         }
-        this.value = head.substring(this.lengthOfLength, this.lengthOfLength + this.length);
         return nextHeadIndex;
     }
 

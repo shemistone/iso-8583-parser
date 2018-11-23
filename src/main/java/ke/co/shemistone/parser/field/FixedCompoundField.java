@@ -126,12 +126,11 @@ public class FixedCompoundField implements CompoundField {
                 }
                 this.value += fieldValue;
                 this.encodedValue += fieldEncodedValue;
-                if (fieldEncodedValue.length() > 0) {
-                    System.out.printf("Field %d.%d => %s (%s)\n", this.id, fieldId, fieldEncodedValue, fieldValue);
+                if (field.getEncodedValue().length() > 0) {
+                    System.out.printf("Field %d.%d => %s (%s)\n", this.id, fieldId, field.getEncodedValue(), field.getValue());
                 }
             } catch (RuntimeException ex) {
                 throw new PackException(String.format("Error packing field %d.%d", this.id, fieldId), ex);
-
             }
         }
         return this.encodedValue;
