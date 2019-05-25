@@ -56,6 +56,9 @@ public class FixedBinField implements Field {
 
     @Override
     public int decode(String head) {
+        if (this.length == 0) {
+            return 0;
+        }
         int nextHeadIndex;
         switch (this.valueEncoding) {
             case BCD:

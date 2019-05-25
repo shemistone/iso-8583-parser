@@ -100,8 +100,10 @@ public class FixedCompoundField implements CompoundField {
 
     @Override
     public String encode() {
-        for (int fieldId = 0; fieldId < this.fields.size(); fieldId++) {
-            try {
+        this.value = "";
+        int fieldId = 0;
+        try {
+            for (fieldId = 0; fieldId < this.fields.size(); fieldId++) {
                 Field field = this.getField(fieldId);
                 String fieldValue = "";
                 String fieldEncodedValue;
@@ -129,18 +131,20 @@ public class FixedCompoundField implements CompoundField {
                 if (field.getEncodedValue().length() > 0) {
                     System.out.printf("Field %d.%d => %s (%s)\n", this.id, fieldId, field.getEncodedValue(), field.getValue());
                 }
-            } catch (RuntimeException ex) {
-                throw new PackException(String.format("Error packing field %d.%d", this.id, fieldId), ex);
             }
+        } catch (RuntimeException ex) {
+            throw new PackException(String.format("Error packing field %d.%d", this.id, fieldId), ex);
         }
         return this.encodedValue;
     }
 
     @Override
     public int decode(String head) {
+        this.value = "";
         int headIndex = 0;
-        for (int fieldId = 0; fieldId < this.fields.size(); fieldId++) {
-            try {
+        int fieldId = 0;
+        try {
+            for (fieldId = 0; fieldId < this.fields.size(); fieldId++) {
                 Field field = this.getField(fieldId);
                 String fieldValue = "";
                 int nextHeadIndex;
@@ -176,9 +180,9 @@ public class FixedCompoundField implements CompoundField {
                 if (field.getValue().length() > 0) {
                     System.out.printf("Field %d.%d => %s (%s)\n", this.id, fieldId, field.getEncodedValue(), field.getValue());
                 }
-            } catch (RuntimeException ex) {
-                throw new UnpackException(String.format("Error unpacking field %d.%d", this.id, fieldId), ex);
             }
+        } catch (RuntimeException ex) {
+            throw new UnpackException(String.format("Error unpacking field %d.%d", this.id, fieldId), ex);
         }
         return headIndex;
     }
