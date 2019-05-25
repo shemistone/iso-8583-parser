@@ -104,8 +104,10 @@ public class VariableCompoundField implements CompoundField {
 
     @Override
     public String encode() {
-        for (int fieldId = 0; fieldId < this.fields.size(); fieldId++) {
-            try {
+        this.value = "";
+        int fieldId = 0;
+        try {
+            for (fieldId = 0; fieldId < this.fields.size(); fieldId++) {
                 Field field = this.getField(fieldId);
                 String fieldValue = "";
                 String fieldEncodedValue;
@@ -130,14 +132,11 @@ public class VariableCompoundField implements CompoundField {
                 }
                 this.value += fieldValue;
                 this.encodedValue += fieldEncodedValue;
-                if (fieldEncodedValue.length() > 0) {
-                    System.out.printf("Field %d.%d => %s (%s)\n", this.id, fieldId, fieldEncodedValue, fieldValue);
+                if (field.getEncodedValue().length() > 0) {
+                    System.out.printf("Field %d.%d => %s (%s)\n", this.id, fieldId, field.getEncodedValue(), field.getValue());
                 }
-            } catch (RuntimeException ex) {
-                throw new PackException(String.format("Error packing field %d.%d", this.id, fieldId), ex);
             }
-        }
-        try {
+
             if (this.value.length() == 0) {
                 return this.encodedValue;
             }
@@ -158,14 +157,17 @@ public class VariableCompoundField implements CompoundField {
             }
             this.encodedValue = encodedLength + this.encodedValue;
         } catch (RuntimeException ex) {
-            throw new PackException(String.format("Error packing field %d", this.id), ex);
+            throw new PackException(String.format("Error packing field %d.%d", this.id, fieldId), ex);
         }
         return this.encodedValue;
     }
 
     @Override
     public int decode(String head) {
+        this.value = "";
         int valueIndex;
+        int headIndex = 0;
+        int fieldId = 0;
         try {
             switch (this.lengthEncoding) {
                 case BCD:
@@ -185,12 +187,9 @@ public class VariableCompoundField implements CompoundField {
             if (this.length > this.maxLength) {
                 throw new UnpackException(String.format("Length of field %d (%d) is more than %d", this.id, this.length, this.maxLength));
             }
-        } catch (RuntimeException ex) {
-            throw new UnpackException(String.format("Error unpacking field %d", this.id), ex);
-        }
-        int headIndex = valueIndex;
-        for (int fieldId = 0; fieldId < this.fields.size(); fieldId++) {
-            try {
+
+            headIndex = valueIndex;
+            for (fieldId = 0; fieldId < this.fields.size(); fieldId++) {
                 Field field = this.fields.get(fieldId);
                 String fieldValue = "";
                 int nextHeadIndex;
@@ -226,9 +225,9 @@ public class VariableCompoundField implements CompoundField {
                 if (field.getValue().length() > 0) {
                     System.out.printf("Field %d.%d => %s (%s)\n", this.id, fieldId, field.getEncodedValue(), field.getValue());
                 }
-            } catch (RuntimeException ex) {
-                throw new UnpackException(String.format("Error unpacking field %d.%d", this.id, fieldId), ex);
             }
+        } catch (RuntimeException ex) {
+            throw new UnpackException(String.format("Error unpacking field %d.%d", this.id, fieldId), ex);
         }
         return headIndex;
 
