@@ -12,8 +12,8 @@ import java.nio.file.Paths;
 import javax.xml.bind.JAXBException;
 import ke.co.shemistone.parser.Strings;
 import org.jboss.logging.Logger;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 /**
  *
@@ -40,13 +40,13 @@ public class EchoMsgTest {
             logger.infof("Encoded value => %s", encodedValue);
             field.setValue("");
             field.decode(encodedValue);
-            Assert.assertEquals("0800", field.getValue(0));
-            Assert.assertEquals("1124210025", field.getValue(7));
-            Assert.assertEquals("254513", field.getValue(11));
-            Assert.assertEquals("301", field.getValue(70));
+            Assertions.assertEquals("0800", field.getValue(0));
+            Assertions.assertEquals("1124210025", field.getValue(7));
+            Assertions.assertEquals("254513", field.getValue(11));
+            Assertions.assertEquals("301", field.getValue(70));
         } catch (JAXBException | IOException | RuntimeException | URISyntaxException ex) {
             logger.error(ex);
-            Assert.fail();
+            Assertions.fail();
         }
 
     }

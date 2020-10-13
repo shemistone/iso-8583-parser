@@ -5,6 +5,8 @@
     <artifactId>iso-8583-parser</artifactId>
     <version>1.0.2-SNAPSHOT</version>
     <packaging>jar</packaging>
+    <name>iso-8583-parser</name>
+    
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -13,9 +15,15 @@
     
     <dependencies>
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>5.6.0</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-junit-jupiter</artifactId>
+            <version>3.5.6</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -47,5 +55,15 @@
             </exclusions>
         </dependency>
     </dependencies>
-    <name>iso-8583-parser</name>
+    
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.0</version>
+            </plugin>
+        </plugins>
+    </build>
+    
 </project>

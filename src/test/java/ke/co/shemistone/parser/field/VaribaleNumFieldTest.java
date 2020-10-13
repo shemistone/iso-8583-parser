@@ -12,9 +12,8 @@ import java.nio.file.Paths;
 import javax.xml.bind.JAXBException;
 import ke.co.shemistone.parser.Strings;
 import org.jboss.logging.Logger;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 /**
  *
@@ -39,10 +38,10 @@ public class VaribaleNumFieldTest {
             logger.infof("Encoded value => %s", encodedValue);
             field.setValue("");
             field.decode(encodedValue);
-            Assert.assertEquals("09001000000672941810", field.getValue());
+            Assertions.assertEquals("09001000000672941810", field.getValue());
         } catch (JAXBException | IOException | RuntimeException | URISyntaxException ex) {
             logger.error(ex);
-            Assert.fail();
+            Assertions.fail();
         }
 
     }
@@ -63,10 +62,10 @@ public class VaribaleNumFieldTest {
             Field field = new VariableNumField(isoField);
             field.decode(lines.substring(36));
             logger.infof("Value => %s", field.getValue());
-            Assert.assertEquals("09001000000672941810", field.getValue());
+            Assertions.assertEquals("09001000000672941810", field.getValue());
         } catch (JAXBException | IOException | RuntimeException | URISyntaxException ex) {
             logger.error(ex);
-            Assert.fail();
+            Assertions.fail();
         }
     }
 

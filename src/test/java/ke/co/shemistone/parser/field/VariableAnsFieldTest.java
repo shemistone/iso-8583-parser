@@ -12,8 +12,8 @@ import java.nio.file.Paths;
 import javax.xml.bind.JAXBException;
 import ke.co.shemistone.parser.Strings;
 import org.jboss.logging.Logger;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 /**
  *
@@ -39,10 +39,10 @@ public class VariableAnsFieldTest {
             field.setValue("");
             field.decode(encodedValue);
             logger.infof("Value => %s", field.getValue());
-            Assert.assertEquals("0000000000", field.getValue());
+            Assertions.assertEquals("0000000000", field.getValue());
         } catch (JAXBException | IOException | RuntimeException | URISyntaxException ex) {
             logger.error(ex);
-            Assert.fail();
+            Assertions.fail();
         }
 
     }

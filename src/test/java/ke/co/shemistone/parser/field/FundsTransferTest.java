@@ -13,8 +13,8 @@ import javax.xml.bind.JAXBException;
 import ke.co.shemistone.parser.Converters;
 import ke.co.shemistone.parser.Strings;
 import org.jboss.logging.Logger;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 /**
  *
@@ -66,39 +66,39 @@ public class FundsTransferTest {
             logger.infof("Encoded value => %s", encodedValue);
             field.setValue("");
             field.decode(encodedValue);
-            Assert.assertEquals("0200", field.getValue(0));
-            Assert.assertEquals("0111111000111010011001001101000110001000111000001111100000010000", field.getValue(1));
-            Assert.assertEquals("09001000000672941810", field.getValue(2));
-            Assert.assertEquals("010000", field.getValue(3));
-            Assert.assertEquals("000005000000", field.getValue(4));
-            Assert.assertEquals("000000050000", field.getValue(5));
-            Assert.assertEquals("000000050000", field.getValue(6));
-            Assert.assertEquals("1124222950", field.getValue(7));
-            Assert.assertEquals("869236", field.getValue(11));
-            Assert.assertEquals("012958", field.getValue(12));
-            Assert.assertEquals("1125", field.getValue(13));
-            Assert.assertEquals("1124", field.getValue(15));
-            Assert.assertEquals("6011", field.getValue(18));
-            Assert.assertEquals("0254", field.getValue(19));
-            Assert.assertEquals("0001", field.getValue(22));
-            Assert.assertEquals("00", field.getValue(25));
-            Assert.assertEquals("12", field.getValue(26));
-            Assert.assertEquals("0D00000000", field.getValue(28));
-            Assert.assertEquals("666767", field.getValue(32));
-            Assert.assertEquals("555555", field.getValue(33));
-            Assert.assertEquals("732822869236", field.getValue(37));
-            Assert.assertEquals("42810486", field.getValue(41));
-            Assert.assertEquals("Shemistone PLC ", field.getValue(42));
-            Assert.assertEquals("Shemistone PLC NRB KE                   ", field.getValue(43));
-            Assert.assertEquals("0835", field.getValue(49));
-            Assert.assertEquals("0835", field.getValue(50));
-            Assert.assertEquals("0835", field.getValue(51));
-            Assert.assertEquals(field.getValue(52), Converters.hexToBin("931EFFFFFFFFFFFF"));
-            Assert.assertEquals("2001000000000000", field.getValue(53));
-            Assert.assertEquals("00000000000000000000", field.getValue(60));
+            Assertions.assertEquals("0200", field.getValue(0));
+            Assertions.assertEquals("0111111000111010011001001101000110001000111000001111100000010000", field.getValue(1));
+            Assertions.assertEquals("09001000000672941810", field.getValue(2));
+            Assertions.assertEquals("010000", field.getValue(3));
+            Assertions.assertEquals("000005000000", field.getValue(4));
+            Assertions.assertEquals("000000050000", field.getValue(5));
+            Assertions.assertEquals("000000050000", field.getValue(6));
+            Assertions.assertEquals("1124222950", field.getValue(7));
+            Assertions.assertEquals("869236", field.getValue(11));
+            Assertions.assertEquals("012958", field.getValue(12));
+            Assertions.assertEquals("1125", field.getValue(13));
+            Assertions.assertEquals("1124", field.getValue(15));
+            Assertions.assertEquals("6011", field.getValue(18));
+            Assertions.assertEquals("0254", field.getValue(19));
+            Assertions.assertEquals("0001", field.getValue(22));
+            Assertions.assertEquals("00", field.getValue(25));
+            Assertions.assertEquals("12", field.getValue(26));
+            Assertions.assertEquals("0D00000000", field.getValue(28));
+            Assertions.assertEquals("666767", field.getValue(32));
+            Assertions.assertEquals("555555", field.getValue(33));
+            Assertions.assertEquals("732822869236", field.getValue(37));
+            Assertions.assertEquals("42810486", field.getValue(41));
+            Assertions.assertEquals("Shemistone PLC ", field.getValue(42));
+            Assertions.assertEquals("Shemistone PLC NRB KE                   ", field.getValue(43));
+            Assertions.assertEquals("0835", field.getValue(49));
+            Assertions.assertEquals("0835", field.getValue(50));
+            Assertions.assertEquals("0835", field.getValue(51));
+            Assertions.assertEquals(field.getValue(52), Converters.hexToBin("931EFFFFFFFFFFFF"));
+            Assertions.assertEquals("2001000000000000", field.getValue(53));
+            Assertions.assertEquals("00000000000000000000", field.getValue(60));
         } catch (JAXBException | IOException | RuntimeException | URISyntaxException ex) {
             logger.error(ex);
-            Assert.fail();
+            Assertions.fail();
         }
 
     }

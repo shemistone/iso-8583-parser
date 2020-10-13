@@ -12,8 +12,8 @@ import java.nio.file.Paths;
 import javax.xml.bind.JAXBException;
 import ke.co.shemistone.parser.Strings;
 import org.jboss.logging.Logger;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 /**
  *
@@ -37,10 +37,10 @@ public class FixedNumFieldTest {
             String encodedValue = field.encode();
             logger.infof("Encoded value => %s", encodedValue);
             field.decode(encodedValue);
-            Assert.assertEquals("0800", field.getValue());
+            Assertions.assertEquals("0800", field.getValue());
         } catch (JAXBException | IOException | RuntimeException | URISyntaxException ex) {
             logger.error(ex);
-            Assert.fail();
+            Assertions.fail();
         }
 
     }
@@ -62,10 +62,10 @@ public class FixedNumFieldTest {
             field.setValue("");
             field.decode(lines);
             logger.infof("Value => %s", field.getValue());
-            Assert.assertEquals("0800", field.getValue());
+            Assertions.assertEquals("0800", field.getValue());
         } catch (JAXBException | IOException | RuntimeException | URISyntaxException ex) {
             logger.error(ex);
-            Assert.fail();
+            Assertions.fail();
         }
 
     }
